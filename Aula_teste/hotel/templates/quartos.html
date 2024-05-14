@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title%}
+    HOTEL SENAI
+{% endblock %}
+
+{% block body%}
+        {% for item in dados_quartos %}
+        <h3>Tipo do quarto:</h3>
+        {{item.tipo}}
+        <h3>Disponibilidade:</h3>
+        {{item.Disponibilidade}}
+        <h3>Valor:</h3>
+        {{item.valor}}
+        <h3>Descrição:</h3>
+        {{item.descricao}}
+        
+    {% endfor%}
+    
+{% endblock %}

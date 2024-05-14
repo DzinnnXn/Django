@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title%}
+{% endblock %}
+
+{% block body%}
+
+    {% for item in dados_hotel %}
+    <h3>{{item.titulo}}</h3>
+    <p>{{item.descricao}}</p>
+    {% endfor%}
+    
+{% endblock %}
