@@ -1,0 +1,34 @@
+.desc {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.desc1-container {
+    display: flex;
+    flex-wrap: wrap;  /* Permite que os itens "quebrem" para a próxima linha se necessário */
+    gap: 20px;  /* Espaço entre os itens */
+}
+
+.desc1 {
+    flex: 1 1 calc(50% - 20px);  /* 50% de largura menos a metade do gap */
+    margin-bottom: 20px;  /* Espaço inferior entre as linhas */
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    box-sizing: border-box;  /* Inclui padding e border no cálculo da largura total */
+}
+
+.desc1 h3 {
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin-top: 0;
+}
+
+.desc1 img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+}

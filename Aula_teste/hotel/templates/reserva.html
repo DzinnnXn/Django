@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title%}
+    HOTEL SENAI - NOME
+{% endblock %}
+
+{% block body%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+<div class="container">
+    <div class="form-container">
+        <h1>Reserva de Hotel</h1>
+        <form action="reserva" method="post" class="reserva-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_nome">Nome:</label>
+                {{ form.nome }}
+            </div>
+            <div class="form-group">
+                <label for="id_sobrenome">Sobrenome:</label>
+                {{ form.sobrenome }}
+            </div>
+            <div class="form-group">
+                <label for="id_email">Email:</label>
+                {{ form.email }}
+            </div>
+            <div class="form-group">
+                <label for="id_idade">Idade:</label>
+                {{ form.idade }}
+            </div>
+            <div class="form-group">
+                <label for="id_endereco">Endereço:</label>
+                {{ form.endereco }}
+            </div>
+            <div class="form-group">
+                <label for="id_quarto_de_escolha">Quarto de Escolha:</label>
+                {{ form.quarto_de_escolha }}
+            </div>
+            <div class="form-group">
+                <label for="id_data_da_reserva">Data da Reserva:</label>
+                {{ form.data_da_reserva }}
+            </div>
+            <input type="submit" value="Submit" class="submit-button">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -6,18 +6,27 @@
 {% endblock %}
 
 {% block body%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/quartos.css' %}">
+
+<div class="desc">
+    <div class="desc1">
         {% for item in dados_quartos %}
         <h3>Tipo do quarto:</h3>
         {{item.tipo}}
         <h3>Disponibilidade:</h3>
-        {{item.Disponibilidade}}
+        {{item.disponibilidade}}
         <h3>Valor:</h3>
-        {{item.valor}}
+        R$ {{ item.valor }}
         <h3>Descrição:</h3>
         {{item.descricao}}
         <h3>Quarto:</h3>
-        <img src="{{item.foto_quarto.url}}" alt="Logo">
+        <img class="desc1"  src="{{item.foto_quarto.url}}" alt="Logo">
+        <p>----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
         
-    {% endfor%}
+        {% endfor%}
+    </div>
+    
+</div>
+        
     
 {% endblock %}
