@@ -1,28 +1,8 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect
 from .models import hotel
 from .models import quarto
 from .models import usuario
 from .forms import FormNome
-
-# Create your views here.
-def homepage(request):
-    context = {}
-    dados_hotel = hotel.objects.all()
-    context["dados_hotel"] = dados_hotel
-    return render(request,'homepage.html', context)
-
-def page_quartos(request):
-    context = {}
-    dados_quartos = quarto.objects.all()
-    context["dados_quartos"] = dados_quartos
-    return render(request,'quartos.html', context)
-
-def reserva(request):
-    context = {}
-    dados_reserva = quarto.objects.all()
-    context["dados_reserva"] = dados_reserva
-    return render(request,'reserva.html', context)
-
 
 def reserva(request):
     if request.method == "POST":
@@ -39,15 +19,26 @@ def reserva(request):
             user = usuario(nome=var_nome, sobrenome=var_sobrenome, email=var_email, idade=var_idade, endereco=var_endereco, quarto_escolha=var_quarto_de_escolha, data_reserva=var_data_da_reserva)
             user.save()
 
-            print(var_nome)
-            print(var_email)
-
-            return HttpResponse("<h1> Login Concluido </h1>")
-
+            return redirect('mostrar_reservas')
 
     else:
         form = FormNome()
+    return render(request, 'reserva.html', {'form': form})
 
-    return render(request, "reserva.html", {"form": form})
+def mostrar_reservas(request):
+    reservas = usuario.objects.all()  # Supondo que 'Usuario' seja o nome do seu modelo de reserva
+    return render(request, 'mostrar_reservas.html', {'reservas': reservas})
+# Create your views here.
+def homepage(request):
+    context = {}
+    dados_hotel = hotel.objects.all()
+    context["dados_hotel"] = dados_hotel
+    return render(request,'homepage.html', context)
+
+def page_quartos(request):
+    context = {}
+    dados_quartos = quarto.objects.all()
+    context["dados_quartos"] = dados_quartos
+    return render(request,'quartos.html', context)
 
     

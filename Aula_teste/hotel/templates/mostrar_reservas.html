@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    Reservas
+{% endblock %}
+
+{% block body %}
+    <h1>Reservas</h1>
+    <ul>
+        {% for reserva in reservas %}
+            <li>{{ reserva.nome }} {{reserva.sobrenome}} - Quarto: {{ reserva.quarto_escolha }} - Data da Reserva: {{ reserva.data_reserva }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
