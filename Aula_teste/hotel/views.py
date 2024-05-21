@@ -83,7 +83,7 @@ def login_view(request):
                 auth_login(request, user)
                 return redirect('homepage')  # ou a página que você deseja redirecionar após login
             else:
-                return HttpResponse("<h1>Login ou Senha Inválidos<h1>")
+                return redirect('login_error')
     else:
         form = FormLogin()
     return render(request, 'login.html', {'form': form})
@@ -92,3 +92,7 @@ def login_view(request):
 def logout_view(request):
     auth_logout(request)
     return redirect('login')
+
+def login_error(request):
+    return render(request, 'login_error.html')
+

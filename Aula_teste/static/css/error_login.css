@@ -1,0 +1,29 @@
+/* static/css/styles.css */
+
+body {
+    background-color: #f8f9fa; /* Cor de fundo suave */
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert-heading {
+    color: #8f0f17;
+}
+
+.btn-primary {
+    background-color: #db4848;
+    border-color: #ff0000;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #b71414;
+    border-color: #5a0909;
+}
