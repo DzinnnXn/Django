@@ -32,18 +32,16 @@ input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Container para centralizar o formulário */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 .form-container {
-    width: 400px;
+    width: 360px;
     padding: 20px;
-    margin-top: 300px;
+    margin-top: 5%;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -51,13 +49,4 @@ input[type="submit"]:hover {
 
 .submit-button{
     margin-top: 15px;
-}
-
-.msg{
-    width: 360px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
 }
