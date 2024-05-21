@@ -2,20 +2,26 @@
 {% load static %}
 
 {% block title%}
-    HOTEL SENAI - NOME
+    HOTEL SENAI - Login
 {% endblock %}
 
-{% block body %}
-<link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}">
+{% block body%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 
 <div class="container">
     <div class="form-container">
         <h1>Login</h1>
-        <form action="login" method="post" class="cadastro-form">
+        <form action="{% url 'login' %}" method="post" class="login-form">
             {% csrf_token %}
-            {{form}}
-            <input type="submit" value="Submit">
-            
+            <div class="form-group">
+                <label for="id_user">Usuário:</label>
+                {{ form.user }}
+            </div>
+            <div class="form-group">
+                <label for="id_password">Senha:</label>
+                {{ form.password }}
+            </div>
+            <input type="submit" value="Login" class="submit-button">
         </form>
     </div>
 </div>
