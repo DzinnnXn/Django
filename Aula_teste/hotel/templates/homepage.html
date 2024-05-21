@@ -5,10 +5,13 @@
 {% endblock %}
 
 {% block body%}
-
+<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+<div class="container">
     {% for item in dados_hotel %}
     <h3>{{item.titulo}}</h3>
     <p>{{item.descricao}}</p>
     {% endfor%}
     
+
+</div>
 {% endblock %}

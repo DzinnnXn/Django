@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title%}
+    HOTEL SENAI - NOME
+{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/cadastro.css' %}">
+
+<div class="container">
+    <div class="form-container">
+        <h1>Login</h1>
+        <form action="login" method="post" class="cadastro-form">
+            {% csrf_token %}
+            {{form}}
+            <input type="submit" value="Submit">
+            
+        </form>
+    </div>
+</div>
+
+{% endblock %}
